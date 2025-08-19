@@ -502,27 +502,27 @@ def main():
     last_candle_update = datetime.now(timezone.utc)
 
     # initial signals
-    signals = compute_ut_signals(df, a=STRAT_A, c=STRAT_ATR_PERIOD, h=STRAT_USE_HEIKIN, start_date=STRAT_START_DATE)
+    # signals = compute_ut_signals(df, a=STRAT_A, c=STRAT_ATR_PERIOD, h=STRAT_USE_HEIKIN, start_date=STRAT_START_DATE)
 
-    plt.style.use('dark_background')
-    fig = plt.figure(figsize=(14, 10))
-    gs = fig.add_gridspec(2, 1, height_ratios=[3, 1])
-    ax1 = fig.add_subplot(gs[0])
-    ax2 = fig.add_subplot(gs[1])
+    # plt.style.use('dark_background')
+    # fig = plt.figure(figsize=(14, 10))
+    # gs = fig.add_gridspec(2, 1, height_ratios=[3, 1])
+    # ax1 = fig.add_subplot(gs[0])
+    # ax2 = fig.add_subplot(gs[1])
 
-    prepare_chart(df, ax1, ax2, signals=signals)
+    # prepare_chart(df, ax1, ax2, signals=signals)
 
-    # holder to allow swapping df and signals inside animation & track notifications
-    df_holder = {'df': df, 'signals': signals, 'notified': set()}
+    # # holder to allow swapping df and signals inside animation & track notifications
+    # df_holder = {'df': df, 'signals': signals, 'notified': set()}
 
-    ani = animation.FuncAnimation(
-        fig, update_chart,
-        fargs=(df_holder, ax1, ax2, fig),
-        interval=REFRESH_INTERVAL * 1000,
-        cache_frame_data=False
-    )
+    # ani = animation.FuncAnimation(
+    #     fig, update_chart,
+    #     fargs=(df_holder, ax1, ax2, fig),
+    #     interval=REFRESH_INTERVAL * 1000,
+    #     cache_frame_data=False
+    # )
 
-    plt.show()
+    # plt.show()
 
 if __name__ == "__main__":
     try:
