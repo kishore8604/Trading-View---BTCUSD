@@ -15,6 +15,10 @@ import numpy as np
 import smtplib
 from email.message import EmailMessage
 import ssl
+import os
+from dotenv import load_dotenv  # optional for local testing
+
+load_dotenv()  # optional, only needed for local testing
 
 # -----------------------
 # Configuration
@@ -41,9 +45,9 @@ RECALCULATE_AFTER_FILL = True
 # -----------------------
 # API credentials (your values)
 # -----------------------
-API_KEY = "bg_8a495e6040fd44c3032e50cf46546c9f"
-SECRET_KEY = "565a7f1af310d7edb780e6d08d58e8f364475bba6456aec80f4fac38dc817ed7"
-PASSPHRASE = "Gughan200"
+API_KEY = os.getenv("API_KEY")
+SECRET_KEY = os.getenv("SECRET_KEY")
+PASSPHRASE = os.getenv("PASSPHRASE")
 
 # -----------------------
 # SMTP / Email settings (fill these in)
